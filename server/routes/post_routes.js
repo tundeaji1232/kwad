@@ -1,21 +1,24 @@
-const { getUser, addUser } = require("../queries/users");
+const { getUser, addUser } = require("../queries/user");
 const {
   hashPassword,
   generatePassword,
   validate
 } = require("../authentication/bcrypt");
-const newUserEmail = require("../authentication/email");
+// const newUserEmail = require("../authentication/email");
 
 module.exports = app => {
   
-  app.post("/api/signup", async (req, res) => {
+  app.post("/signup", async (req, res) => {
+    console.log("req.body:", req.body)
     try {
+      console.log("req.body", req.body)
       const userExists = await getUser(req.body.email);
+      
       if (!userExists) {
         const userPassword = generatePassword();
         req.body.password = await hashPassword(userPassword);
         const newUserData = await addUser(req.body);
-        newUserEmail(newUserData[0], userPassword);
+        // newUserEmail(newUserData[0], userPassword);
         res.send(newUserData);
       } else {
         res.send("User already exists!");
@@ -24,7 +27,7 @@ module.exports = app => {
       console.log("Add new user error: ", err);
     }
   });
-  app.post("/api/login", async (req, res) => {
+  app.post("/login", async (req, res) => {
     try {
       const userData = await getUser(req.body.email);
       await validate(req.body.password, userData, req.body.username);

@@ -17,8 +17,8 @@ app.use(
   })
 );
 
-require("./routes/get_routes")(app);
-require("./routes/post_routes")(app);
+require("./routes/get_routes");
+require("./routes/post_routes");
 
 
 if (process.env.NODE_ENV === "production") {
