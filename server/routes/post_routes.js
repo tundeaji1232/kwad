@@ -4,21 +4,17 @@ const {
   generatePassword,
   validate
 } = require("../authentication/bcrypt");
-// const newUserEmail = require("../authentication/email");
 
 module.exports = app => {
-  
-  app.post("/signup", async (req, res) => {
+  app.post("/api/signup", async (req, res) => {
     console.log("req.body:", req.body)
     try {
-      console.log("req.body", req.body)
       const userExists = await getUser(req.body.email);
-      
       if (!userExists) {
         const userPassword = generatePassword();
         req.body.password = await hashPassword(userPassword);
         const newUserData = await addUser(req.body);
-        // newUserEmail(newUserData[0], userPassword);
+        console.log(newUserData);
         res.send(newUserData);
       } else {
         res.send("User already exists!");
@@ -27,11 +23,13 @@ module.exports = app => {
       console.log("Add new user error: ", err);
     }
   });
-  app.post("/login", async (req, res) => {
+  app.post("/api/login", async (req, res) => {
+    console.log("req.body:", req.body);
     try {
       const userData = await getUser(req.body.email);
-      await validate(req.body.password, userData, req.body.username);
+      await validate(req.body.password, userData, userData[0].username);
       req.session.user = { id: userData.id, username: userData[0].username };
+    
       res.send({ ...userData, password: null });
     } catch (err) {
       res.send({ error: err });

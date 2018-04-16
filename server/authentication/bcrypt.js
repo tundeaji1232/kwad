@@ -36,7 +36,7 @@ const validate = (password, userData,username) =>
       });
     } else {
       reject(
-        "Oops" + username + "You do not have an account."
+        "Oops" + userData[0].username + "You do not have an account."
       );
     }
   });

@@ -4,9 +4,6 @@ const getOpportunities = () =>
     db
   .query("SELECT  * FROM  opportunities" );
 
-module.exports = {
-  getOpportunities
-};
 
 const getSingleOpportunity = (userId) => {
     return db.query('SELECT * FROM opportunities WHERE id = $1', [userId])

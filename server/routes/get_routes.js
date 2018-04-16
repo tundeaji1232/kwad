@@ -1,28 +1,29 @@
-const { getUser, addUser } = require("../queries/user");
-const {
-  hashPassword,
-  generatePassword,
-  validate
-} = require("../authentication/bcrypt");
-// const newUserEmail = require("../authentication/email");
+const { oneUser } = require("../queries/user");
 
 module.exports = app => {
   
-//   app.get("/signup", async (req, res) => {
-//     try {
-//       const userExists = await getUser(req.body.email);
-//       console.log(req.body)
-//       if (!userExists) {
-//         const userPassword = generatePassword();
-//         req.body.password = await hashPassword(userPassword);
-//         const newUserData = await addUser(req.body);
-//         // newUserEmail(newUserData[0], userPassword);
-//         res.send(newUserData);
-//       } else {
-//         res.send("User already exists!");
-//       }
-//     } catch (err) {
-//       console.log("Add new user error: ", err);
-//     }
-//   });
+  app.get("/api/fetchUser", async (req, res) => {
+    try {
+      const userId = req.query.id
+        ? req.query.id
+        : req.session.user ? req.session.user.id : null;
+      if (userId) {
+        const profileData = await oneUser(userId);
+        res.send({ ...profileData, password: null });
+      } else {
+        res.send({ error: "Please log in" });
+      }
+    } catch (err) {
+      throw err;
+    }
+  });
+
+  app.get("/api/opportunities", async (req,res)=>{
+    try {
+      const opportunityData = await getOpportunities();
+      res.send(opportunityData);
+    } catch (err){
+      throw err;
+    }
+  })
 }
