@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(
   cookieSession({
     name: "session",
-    secret: "process.env.SECRET",
+    keys: [process.env.SECRET],
     maxAge: 24 * 60 * 60 * 1000
   })
 );

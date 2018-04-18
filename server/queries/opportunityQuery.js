@@ -1,8 +1,9 @@
 const db = require("../database/db_connection");
 
-const getOpportunities = () =>
-    db
-  .query("SELECT  * FROM  opportunities" );
+const getOpportunities = () =>{
+  return db.query("SELECT  * FROM  opportunities" );
+};
+  
 
 
 const getSingleOpportunity = (userId) => {

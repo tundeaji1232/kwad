@@ -1,4 +1,5 @@
 const { oneUser } = require("../queries/user");
+const { getOpportunities }= require("../queries/opportunityQuery");
 
 module.exports = app => {
   
@@ -18,12 +19,30 @@ module.exports = app => {
     }
   });
 
+  // app.get("/api/opportunities", async (req,res)=>{
+  //   try {
+  //     const opportunityData = await getOpportunities()
+  //     .then((data) => {
+  //       return res.send(opportunityData);
+  //   })
+     
+  //   } catch (err){
+  //     throw err;
+  //   }
+  // })
+
+
   app.get("/api/opportunities", async (req,res)=>{
     try {
-      const opportunityData = await getOpportunities();
-      res.send(opportunityData);
+      const opportunityData = await getOpportunities()
+          .then((data) => {
+        	res.send(JSON.stringify(data));;
+    })
+     
     } catch (err){
       throw err;
     }
   })
+
+
 }
