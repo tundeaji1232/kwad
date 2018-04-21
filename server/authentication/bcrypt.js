@@ -1,4 +1,5 @@
-const bcrypt = require("bcrypt");
+
+const bcrypt = require("bcrypt-nodejs");
 
 const hashPassword = password =>
   new Promise((resolve, reject) => {
@@ -22,23 +23,33 @@ const generatePassword = () => {
   return randomPassword;
 };
 
-const validate = (password, userData,username) =>
-  new Promise((resolve, reject) => {
-    if (userData) {
-      bcrypt.compare(password, userData.password, (err, res) => {
-        if (err) {
-          reject(err);
-        } else if (res) {
-          resolve(true);
-        } else {
-          reject("Wrong password!");
-        }
-      });
-    } else {
-      reject(
-        "Oops" + userData[0].username + "You do not have an account."
-      );
-    }
+const comparePassword = (candidatePassword, user) => {
+  return new Promise((resolve, reject) => {
+    bcrypt.compare(candidatePassword, user.password, (err, isMatch) => {
+      if (err) reject(err.message);
+      resolve({ isMatch, user });
+    });
   });
+};
 
-module.exports = { hashPassword, generatePassword, validate };
+
+// const validate = (password, userData,username) =>
+//   new Promise((resolve, reject) => {
+//     if (userData) {
+//       bcrypt.compare(password, userData.password, (err, res) => {
+//         if (err) {
+//           reject(err);
+//         } else if (res) {
+//           resolve(true);
+//         } else {
+//           reject("Wrong password!");
+//         }
+//       });
+//     } else {
+//       reject(
+//         "Oops" + userData[0].username + "You do not have an account."
+//       );
+//     }
+//   });
+
+module.exports = { hashPassword, generatePassword, comparePassword };

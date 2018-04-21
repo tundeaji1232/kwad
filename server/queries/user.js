@@ -6,7 +6,7 @@ const getUser = email =>
     .then(res => res[0])
     .catch(err => console.log("check user err: ", err));
 
-const addUser = data =>
+const addUser = data =>{
   db.query(
     `INSERT INTO users (name, email, password ) VALUES ($1, $2, $3) RETURNING *`,
     [
@@ -15,7 +15,9 @@ const addUser = data =>
       data.password,
      
     ]
-  );
+  )
+  .then(user => user[0]);
+};
 
   const oneUser = id =>
   db
@@ -23,11 +25,17 @@ const addUser = data =>
     .then(res => res[0])
     .catch(err => console.log("one user query err: ", err));
 
+    const getUserById = id => {
+      return db
+        .query(`SELECT * FROM users WHERE id = $1`, [id])
+        .then(user => user[0]);
+    };
 
 
 module.exports = {
   getUser,
   addUser,
-  oneUser
+  oneUser,
+  getUserById
  
 };

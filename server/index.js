@@ -9,13 +9,6 @@ const PORT = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(
-  cookieSession({
-    name: "session",
-    keys: [process.env.SECRET],
-    maxAge: 24 * 60 * 60 * 1000
-  })
-);
 
 require("./routes/get_routes")(app);
 require("./routes/post_routes")(app);
