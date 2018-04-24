@@ -10,6 +10,10 @@ const localLogin = new LocalStrategy(localOptions, (email, password, done) => {
 	queries
 		.getUser(email)
 		.then(user => {
+			console.log({
+				user
+			});
+			
 			if (!user) {
 				return done(null, false);
 			}

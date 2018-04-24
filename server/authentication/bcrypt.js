@@ -27,6 +27,11 @@ const generatePassword = () => {
 const comparePassword = (candidatePassword, user) => {
   return new Promise((resolve, reject) => {
     bcrypt.compare(candidatePassword, user.password, (err, isMatch) => {
+      console.log({
+        err,
+        isMatch
+      });
+      
       if (err) reject(err.message);
       resolve({ isMatch, user });
     });
