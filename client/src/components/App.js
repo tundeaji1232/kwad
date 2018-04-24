@@ -38,7 +38,7 @@ class App extends Component {
           />
             {/* <Route exact path="/"  component={LandingPageContainer} /> */}
             <Route exact path="/login"   component={LoginForm}  />
-            {/* <Route exact path="/signup" component={SignUpForm} /> */}
+            <Route exact path="/signup" component={SignUpForm} />
             {/* <Route exact path="/dashboard" component={Dashboard} /> */}
             <Route exact path="/buildAudience"  component={BuildAudience} />
             <Route exact path="/opportunity" component={OpportunityContainer} />

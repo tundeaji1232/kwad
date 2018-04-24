@@ -5,18 +5,18 @@ import { UNAUTH_USER,AUTH_USER,OPPORTUNITIES,GET_DATA } from './types'
 
 import { youtubeToken } from "../token";
 
-export const signupUser = data => async dispatch => {
-    try {
-       const userData= await axios.post("/api/signup", data);
-        localStorage.setItem("token", userData.data.token)
-        dispatch({ type: AUTH_USER });
-        // console.log("userdata payload from action index",userData.data);
-        history.push("/dashboard");
-    }
-    catch (err) {
-        console.log(err);
-    }
-};
+// export const signupUser = data => async dispatch => {
+//     try {
+//        const userData= await axios.post("/api/signup", data);
+//         localStorage.setItem("token", userData.data.token)
+//         dispatch({ type: AUTH_USER });
+//         // console.log("userdata payload from action index",userData.data);
+//         history.push("/dashboard");
+//     }
+//     catch (err) {
+//         console.log(err);
+//     }
+// };
 
 
 export const fetchUser = () => {

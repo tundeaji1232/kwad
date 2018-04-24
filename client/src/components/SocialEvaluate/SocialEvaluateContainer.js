@@ -3,21 +3,21 @@ import * as actions  from "../../actions";
 import { connect } from 'react-redux';
 import YoutubeForm from './SocialEvaluateComponent';
 import Header from "../Header";
-import styled from "styled-components";
+// import styled from "styled-components";
 
 
-const ResultDiv = styled.div`
-border: solid 2px #f7f7f7;
-border-radius: 0.5rem;
-margin: 1rem;
-padding: 0.5rem;
-flex-grow: 1;
-background-color: #fbf8f8;
-color: #795548;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-max-width: 70%;
-margin: auto;
-`
+// const ResultDiv = styled.div`
+// border: solid 2px #f7f7f7;
+// border-radius: 0.5rem;
+// margin: 1rem;
+// padding: 0.5rem;
+// flex-grow: 1;
+// background-color: #fbf8f8;
+// color: #795548;
+// box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+// max-width: 70%;
+// margin: auto;
+// `
  class SocialEvaluate extends Component {
    constructor(props) {
        super(props);

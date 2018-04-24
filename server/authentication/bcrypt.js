@@ -13,16 +13,16 @@ const hashPassword = password =>
     });
   });
 
-const generatePassword = () => {
-  const letters = "abcdefghijklmnopqrstuvwxyz";
-  let randomPassword = "";
-  for (let i = 0; i < 6; i++) {
-    randomPassword += letters.charAt(
-      Math.floor(Math.random() * letters.length)
-    );
-  }
-  return randomPassword;
-};
+// const generatePassword = () => {
+//   const letters = "abcdefghijklmnopqrstuvwxyz";
+//   let randomPassword = "";
+//   for (let i = 0; i < 6; i++) {
+//     randomPassword += letters.charAt(
+//       Math.floor(Math.random() * letters.length)
+//     );
+//   }
+//   return randomPassword;
+// };
 
 const comparePassword = (candidatePassword, user) => {
   return new Promise((resolve, reject) => {
@@ -58,4 +58,4 @@ const comparePassword = (candidatePassword, user) => {
 //     }
 //   });
 
-module.exports = { hashPassword, generatePassword, comparePassword };
+module.exports = { hashPassword,  comparePassword };
