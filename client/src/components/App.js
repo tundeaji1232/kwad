@@ -22,12 +22,12 @@ class App extends Component {
     return (
         <Router history={history}>
           <Switch>
-          {/* <Route exact path="/" 
-              render={props => (!this.props.auth ? (<OpportunityContainer {...props} />) : (<Redirect to="/dashboard"/>))}
-            /> */}
+          <Route exact path="/" 
+              render={props => (!this.props.auth ? (<LandingPageContainer {...props} />) : (<Redirect to="/dashboard"/>))}
+            />
 
-            {/* <Route exact path="/signup" 
-              render={props => (!this.props.auth ? (<OpportunityContainer  {...props}/>) : (<Redirect to="/dashboard"/>))}
+            <Route exact path="/signup" 
+              render={props => (!this.props.auth ? (<LandingPageContainer  {...props}/>) : (<Redirect to="/dashboard"/>))}
             />
           <Route
             exact
@@ -35,11 +35,11 @@ class App extends Component {
             render={props =>
               this.props.auth ? <Dashboard /> : <Redirect to="/signup" />
             }
-          /> */}
-            <Route exact path="/"  component={LandingPageContainer} />
+          />
+            {/* <Route exact path="/"  component={LandingPageContainer} /> */}
             <Route exact path="/login"   component={LoginForm}  />
-            <Route exact path="/signup" component={SignUpForm} />
-            <Route exact path="/dashboard" component={Dashboard} />
+            {/* <Route exact path="/signup" component={SignUpForm} /> */}
+            {/* <Route exact path="/dashboard" component={Dashboard} /> */}
             <Route exact path="/buildAudience"  component={BuildAudience} />
             <Route exact path="/opportunity" component={OpportunityContainer} />
             <Route exact path="/opportunity/:id" component={Opportunity} />
