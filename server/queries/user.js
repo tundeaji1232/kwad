@@ -3,11 +3,12 @@ const db = require("../database/db_connection");
 const getUser = email =>
   db
     .query(`SELECT * FROM users WHERE email = $1`, [email])
-    .then(res => res[0])
+    .then(res => console.log('>>>>>>>>>>>>', res) || res[0])
     .catch(err => console.log("check user err: ", err));
 
-const addUser = data =>{
-  db.query(
+
+    const addUser = data =>{
+  return db.query(
     `INSERT INTO users (name, email, password ) VALUES ($1, $2, $3) RETURNING *`,
     [
       data.name,
@@ -16,7 +17,7 @@ const addUser = data =>{
      
     ]
   )
-  .then(user => user[0]);
+  .then(user =>console.log(user)|| user[0]);
 };
 
   const oneUser = id =>

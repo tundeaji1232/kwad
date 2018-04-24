@@ -3,7 +3,8 @@ const bcrypt = require("bcrypt-nodejs");
 
 const hashPassword = password =>
   new Promise((resolve, reject) => {
-    bcrypt.hash(password, 10, (err, hash) => {
+    const salt = bcrypt.genSaltSync(10);
+    bcrypt.hash(password, salt, null, (err, hash) => {
       if (err) {
         reject(err);
       } else {
@@ -26,6 +27,11 @@ const generatePassword = () => {
 const comparePassword = (candidatePassword, user) => {
   return new Promise((resolve, reject) => {
     bcrypt.compare(candidatePassword, user.password, (err, isMatch) => {
+      console.log({
+        err,
+        isMatch
+      });
+      
       if (err) reject(err.message);
       resolve({ isMatch, user });
     });

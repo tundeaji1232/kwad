@@ -17,8 +17,8 @@ module.exports = app => {
     try {
       const userExists = await getUser(req.body.email);
       if (!userExists) {
-        const userPassword = generatePassword();
-        req.body.password = await hashPassword(userPassword);
+      
+        req.body.password = await hashPassword(req.body.password);
         const newUserData = await addUser(req.body);
 	res.json({ token: userToken(newUserData) });
    res.send(newUserData);
@@ -27,6 +27,7 @@ module.exports = app => {
         res.send("User already exists!");
       }
     } catch (err) {
+      res.status(401).send(err);
       console.log("Add new user error: ", err);
     }
   });
