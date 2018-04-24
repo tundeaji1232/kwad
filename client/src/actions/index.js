@@ -2,7 +2,7 @@
 import axios from "axios";
 import history from './history';
 import { UNAUTH_USER,AUTH_USER,OPPORTUNITIES,GET_DATA } from './types'
-import { token } from "../token";
+import { youtubeToken } from "../token";
 
 export const signupUser = data => async dispatch => {
     try {
@@ -88,7 +88,7 @@ export const getData = term => async dispatch => {
   try {
     const YOUTUBE_API_BASE = " https://www.googleapis.com/youtube/v3/channels?part=statistics";
     const url = `${YOUTUBE_API_BASE}&id=${term}`;
-    const youtubeData= await axios.get (`${url}&key=${token}`)
+    const youtubeData= await axios.get (`${url}&key=${youtubeToken}`)
                                   .then(res => res.data)
                                   console.log("youtube data:",youtubeData)
                                   console.log("youtube data:",youtubeData.items[0].statistics)
