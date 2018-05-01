@@ -56,9 +56,9 @@ class OpportunityContainer extends Component {
           return (
               <Opul key={item.id}>
             <OpLi   >
-            <p>{item.usp} </p>
-            <p>{item.brandname} </p>
-            <p>{item.tags}</p>
+            <h3>{item.usp} </h3>
+            <h3>{item.brandname} </h3>
+            <h3>{item.tags}</h3>
             <p>{item.brandurl}</p>
             <LinkButton ><Link to={`/opportunity/${item.id}`} />More</LinkButton>
              </OpLi>
