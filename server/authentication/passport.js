@@ -3,6 +3,7 @@ const LocalStrategy = require("passport-local").Strategy;
 const { Strategy, ExtractJwt } = require("passport-jwt");
 const queries = require("../queries/user");
 const { comparePassword } = require("./bcrypt");
+require("env2")("./config.env");
 
 const localOptions = { usernameField: "email" };
 
