@@ -2,14 +2,17 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const cookieSession = require("cookie-session");
-require("env2")(".env")
 
 
+if (process.env.NODE_ENV !== "production"){
+  require("env2")(".env")
+}
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
 
 if (process.env.NODE_ENV === "production") {
   const clientBuildPath = path.join(__dirname, "..", "/client/build/"); 
