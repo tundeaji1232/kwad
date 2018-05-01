@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const cookieSession = require("cookie-session");
+require("env2")("../config.env")
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -9,9 +10,6 @@ const PORT = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-
-require("./routes/get_routes")(app);
-require("./routes/post_routes")(app);
 
 
 if (process.env.NODE_ENV === "production") {
@@ -21,6 +19,11 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(clientBuildPath, "index.html"));
   });
 }
+
+
+require("./routes/get_routes")(app);
+require("./routes/post_routes")(app);
+
 
 app.disabled("x-powered-by");
 
