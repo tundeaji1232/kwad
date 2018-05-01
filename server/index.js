@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const cookieSession = require("cookie-session");
-require("env2")("../config.env")
+require("env2")("../.env")
 
 const app = express();
 const PORT = process.env.PORT || 5000;
