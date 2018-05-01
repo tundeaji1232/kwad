@@ -23,7 +23,8 @@ const Nul = styled.ul`
   flex-direction: row;
   list-style-type: none;
   justify-content: space-around;
-  font-size:1.3rem;
+  font-size:1.3if(process.env.NODE_ENV !== "production"){
+    rem;
 `
 
 const Nli =styled.li`
