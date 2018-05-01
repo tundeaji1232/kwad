@@ -16,20 +16,20 @@ export default class BuildAudienceVideo extends Component {
         
          <h2> Building your Online Persona </h2>
         <YouTube
-          videoId="2g811Eo7K8U"
+          videoId="y5Nt_KRZWtY"
           opts={opts}
           onReady={this._onReady}
         /> 
         <h2> How to build Audience </h2>
         <YouTube
-        videoId=" rE2ZlhZXOdQ"
+        videoId="n7wsRIzAvB0"
         opts={opts}
         onReady={this._onReady}
       />
 
-       <h2> How to build Audience </h2>
+       <h2> How to leverage on the audience you built </h2>
         <YouTube
-        videoId=" rE2ZlhZXOdQ"
+        videoId="rE2ZlhZXOdQ"
         opts={opts}
         onReady={this._onReady}
       />

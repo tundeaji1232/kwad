@@ -17,8 +17,9 @@ flex-grow: 1;
 background-color: #fbf8f8;
 color: #795548;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-max-width: 70%;
+
 margin: auto;
+display: flex;
 
 `
 const Opul=styled.ul`
