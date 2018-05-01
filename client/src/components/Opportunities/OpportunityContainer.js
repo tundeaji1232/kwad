@@ -7,6 +7,15 @@ import _ from 'lodash';
 import Header from "../Header";
 import styled from "styled-components";
 
+
+const MainH1= styled.h1`
+text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  color: #000080;
+`
+
 const Opul=styled.ul`
 list-style-type: none;
 `
@@ -14,7 +23,7 @@ list-style-type: none;
 const OpLi= styled.li`
 border: solid 2px #f7f7f7;
 border-radius: 0.5rem;
-margin: 1rem;
+
 padding: 0.5rem;
 flex-grow: 1;
 background-color: #fbf8f8;
@@ -23,6 +32,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 width: 60%;
 height:40%;
 margin: auto;
+margin-bottom:3rem;
 display: flex;
 flex-direction:column;
 flex-wrap:wrap;
@@ -73,7 +83,7 @@ class OpportunityContainer extends Component {
         return (
             <div>
                 <Header />
-                <h1>List of Brand Opportunities for You To Earn From </h1>
+                < MainH1>List of Brand Opportunities  </ MainH1>
               <div>
                 {this.renderOpportunities()}
                   </div>

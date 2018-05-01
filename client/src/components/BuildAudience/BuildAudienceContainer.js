@@ -9,6 +9,16 @@ text-align: center;
   display: flex;
   justify-content: center;
   align-content: center;
+
+`
+
+const MainH1= styled.h1`
+text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  color: #000080;
+  margin-bottom: -2rem;
 `
 export default class BuildAudienceContainer extends Component {
 
@@ -16,7 +26,8 @@ export default class BuildAudienceContainer extends Component {
         return (
             <div>
                 < Header />
-                <h1>Learn To Build Your Audience</h1>
+                <MainH1>Learn To Build Your Audience</MainH1>
+                <MainH1>Watch Videos and Follow Instructions at the End</MainH1>
                <ContainerD> <BuildAudienceVideo /> </ContainerD>
                 
             </div>
