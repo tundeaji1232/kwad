@@ -5,6 +5,7 @@ const queries = require("../queries/user");
 const { comparePassword } = require("./bcrypt");
 
 const localOptions = { usernameField: "email" };
+console.log(">>>>>>>>", process.env.SECRET);
 
 const localLogin = new LocalStrategy(localOptions, (email, password, done) => {
 	queries
