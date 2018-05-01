@@ -7,6 +7,9 @@ import _ from 'lodash';
 import Header from "../Header";
 import styled from "styled-components";
 
+const Opul=styled.ul`
+list-style-type: none;
+`
 
 const OpLi= styled.li`
 border: solid 2px #f7f7f7;
@@ -17,13 +20,23 @@ flex-grow: 1;
 background-color: #fbf8f8;
 color: #795548;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+width: 60%;
+height:40%;
 margin: auto;
 display: flex;
+flex-direction:column;
+flex-wrap:wrap;
 
 `
-const Opul=styled.ul`
-list-style-type: none;
+const LinkButton=styled.div`
+background-color: #7FDBFF;
+border: none;
+color:white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
 `
 
 
@@ -47,7 +60,7 @@ class OpportunityContainer extends Component {
             <p>{item.brandname} </p>
             <p>{item.tags}</p>
             <p>{item.brandurl}</p>
-            <Link to={`/opportunity/${item.id}`} />
+            <LinkButton ><Link to={`/opportunity/${item.id}`} />More</LinkButton>
              </OpLi>
              </Opul>
           );

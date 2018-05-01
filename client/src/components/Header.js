@@ -38,13 +38,13 @@ class Header extends Component {
         <NavBar>
           <Nul>
          <Nli> <Link to='/buildAudience' >Build Your Audience</Link></Nli>
-         <Nli> <Link to='/socialEvaluate' >Evaluate your net worth</Link></Nli>
+         <Nli> <Link to='/socialEvaluate' >Evaluate Your Net Worth</Link></Nli>
           <Nli><Link to='/opportunity' >Opportunities</Link></Nli>
-          <Nli><Link to='/incomeManager' >Income manager</Link> </Nli>
+          <Nli><Link to='/incomeManager' >Income Manager</Link> </Nli>
           <Nli>
           <Link to='/' onClick={this.logout.bind(this)}>
             <i ></i>
-            Log out
+            Log Out
           </Link>
         </Nli>
           </Nul>     
