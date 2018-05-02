@@ -14,7 +14,6 @@ JWT and Passport : authentication <br />
 
 
 
-////////////////////////////
 ### Running our project locally
 Kwadium is [hosted on Heroku](https://kwadium.herokuapp.com), but if you would like to run it locally please follow these instructions:
 
