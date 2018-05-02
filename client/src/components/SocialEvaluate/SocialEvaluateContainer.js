@@ -76,7 +76,7 @@ align-items:center;
             <div><h2>You net reach on your youtube channel is :
                 <DivResult>{subscriberCount}</DivResult>
                 </h2></div>
-            <p>Example of youtube channel: UC98x5I1LVPhtnUHDyujq7zg</p>
+            <p>Example of youtube channel ID: UC98x5I1LVPhtnUHDyujq7zg</p>
             </DivSocialContainer>
             </div>
         )
