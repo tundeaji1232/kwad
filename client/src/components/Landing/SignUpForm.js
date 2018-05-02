@@ -47,7 +47,7 @@ background: none;
 border-bottom: 0.03em solid rgba(255, 255, 255, 0.99);
 width: 205px;
 margin: 1.2em 0;
-color: white;
+color: black;
 font-size: 0.7rem;
 padding-bottom: 1px;
 
