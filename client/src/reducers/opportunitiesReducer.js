@@ -23,3 +23,11 @@ export default (state = {}, action) => {
       return state;
   }
 };
+
+// {
+//   opportunity_list: [1,2],
+//   results: {
+//     1: {},
+//     2: {}
+//   }
+// }

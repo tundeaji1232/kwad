@@ -7,7 +7,8 @@ import history from '../actions/history';
 import  LandingPageContainer from './Landing/LandingPageContainer';
 import BuildAudience from './BuildAudience/BuildAudienceContainer';
 import OpportunityContainer from './Opportunities/OpportunityContainer';
-import Opportunity from './Opportunities/Opportunity';
+import EachOpportunity from './Opportunities/EachOpportunity';
+// import Opportunity from './Opportunities/Opportunity';
 import SignUpForm from './Landing/SignUpForm';
 import LoginForm from './Landing/LoginForm';
 import Dashboard from './Dashboard';
@@ -42,7 +43,7 @@ class App extends Component {
             {/* <Route exact path="/dashboard" component={Dashboard} /> */}
             <Route exact path="/buildAudience"  component={BuildAudience} />
             <Route exact path="/opportunity" component={OpportunityContainer} />
-            <Route exact path="/opportunity/:id" component={Opportunity} />
+            <Route exact path="/opportunity/:id" component={EachOpportunity} />
             <Route exact path="/incomeManager" component={IncomeManagerContainer} />
             <Route exact path="/socialEvaluate"  component={socialEvaluate} />
           </Switch>

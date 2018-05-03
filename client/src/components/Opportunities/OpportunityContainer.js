@@ -55,7 +55,7 @@ class OpportunityContainer extends Component {
     componentDidMount(){
         if(!this.props.opportunities){
             this.props.fetchOpportunities();
-            // console.log("opportunities in oppr container:", this.props.opportunities)
+           //  console.log("opportunities in oppr container:", this.props.opportunities)
         }
     }
 
@@ -63,14 +63,17 @@ class OpportunityContainer extends Component {
     renderOpportunities() {
       
         return _.map(this.props.opportunities, item => {
+           
           return (
+           
               <Opul key={item.id}>
-            <OpLi   >
+              
+            <OpLi >
             <h3>{item.usp} </h3>
             <h3>{item.brandname} </h3>
             <h3>{item.tags}</h3>
             <p>{item.brandurl}</p>
-            <LinkButton ><Link to={`/opportunity/${item.id}`} />More</LinkButton>
+            <LinkButton ><Link to={`/opportunity/${item.id}`} >More</Link></LinkButton>
              </OpLi>
              </Opul>
           );
