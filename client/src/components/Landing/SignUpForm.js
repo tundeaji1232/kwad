@@ -104,7 +104,7 @@ class SignUpForm extends Component {
                         arialabel='Confirm password'
                         component={this.renderField}
                     />
-                    
+                    <p className="landing__input--errortext">{this.renderAlert()}</p> 
                     <BtnInput type="submit" defaultValue="Sign Up" className="" />
                     <Link to='/login' className="">Already a member? Login</Link>
                 </Form>
@@ -123,10 +123,18 @@ class SignUpForm extends Component {
             </div>
     ])
     }
-
+    renderAlert(){
+        if(this.props.error){
+            return <strong> OopS! {this.props.error}</strong>
+        }
+    }
     handleFormSubmit(values){
         console.log(values);
         this.props.signupUser(values)
+      }
+
+      componentDidMount(){
+          this.props.restError();
       }
 }
 
@@ -140,12 +148,14 @@ const validate = values => {
     return errors;
   }
   
-
+  const mapStateToProps= state =>({
+      error: state.error
+  })
   
   export default reduxForm ({
     validate,
     form: 'SignUpForm'
   })(
-     connect (null, { signupUser })(SignUpForm)
+     connect (mapStateToProps, { signupUser })(SignUpForm)
   )
   

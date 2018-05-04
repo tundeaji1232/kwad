@@ -35,7 +35,7 @@ margin: auto;
 margin-bottom:3rem;
 display: flex;
 flex-direction:column;
-flex-wrap:wrap;
+flex-wrap:nowrap;
 
 `
 const LinkButton=styled.div`

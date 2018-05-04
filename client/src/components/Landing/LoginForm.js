@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { loginUser } from "../../actions";
+import { loginUser,displayError } from "../../actions";
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import styled from "styled-components";
@@ -89,6 +89,7 @@ class LoginForm extends Component {
               arialabel='Password'
               component={this.renderField}
             />
+             <p >{this.renderAlert()}</p>
             <BtnInput type="submit" defaultValue="Login" />
             <Link to='/signup' >New to Kwadium? Sign up</Link>
           </Form>
@@ -112,8 +113,16 @@ class LoginForm extends Component {
     this.props.loginUser(values)
   }
 
- 
+  renderAlert(){
+    if (this.props.error){
+      return <span><strong>Oops!</strong> {this.props.error}</span>
+    }
+  }
 
+ 
+  // componentDidMount() {
+  //   this.props.displayError();
+  // }
 
 }
 
@@ -124,10 +133,10 @@ const validate = values => {
   return errors;
 }
 
-
+const mapStateToProps = state => console.log(state) || ({ error: state.error })
 export default reduxForm ({
   validate,
   form: 'LoginForm'
 })(
-  connect (null, { loginUser })(LoginForm)
+  connect (mapStateToProps, { loginUser , displayError })(LoginForm)
 );

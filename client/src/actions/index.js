@@ -1,7 +1,7 @@
 
 import axios from "axios";
 import history from './history';
-import { UNAUTH_USER,AUTH_USER,OPPORTUNITIES,GET_DATA } from './types'
+import { UNAUTH_USER,AUTH_USER,OPPORTUNITIES,GET_DATA,DISPLAY_ERROR,RESET_ERROR } from './types'
 // require("env2")("./../env")
  import { youtubeToken } from "../token";
 
@@ -91,9 +91,8 @@ export const signupUser= values => {
       history.push("/dashboard")
     })
     .catch(err => {
-    
-    console.log(err);
-     })
+      dispatch(displayError(err.response.data.error));
+    })
   }
 }
 //////////////////////////////////////////////////////////////////////////
@@ -145,9 +144,13 @@ export const loginUser = values => {
       history.push("/dashboard")
     })
     .catch(err => {
-    
-      console.log(err);
-       })
+      if (err.message.includes('401')){
+        console.log("error>>>>>",err.message)
+        dispatch(displayError('Email or password was incorrect'));
+      } else {
+        dispatch(displayError("There was an issue with our server. Please try again later"));
+      }
+    })
   
   }
 }
@@ -250,3 +253,19 @@ export const getData = term => async dispatch => {
 
 //testing code for returning youtube channel details above
 // https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UC98x5I1LVPhtnUHDyujq7zg&key=AIzaSyAiQqpzKfLL3Gj_qR4gAUHGkVZf3H0TAjY
+
+
+
+
+export const displayError = err => {
+  return {
+    type: DISPLAY_ERROR,
+    payload: err
+  };
+}
+
+export const resetError = () => {
+  return {
+    type: RESET_ERROR
+  };
+}
