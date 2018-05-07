@@ -1,6 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import styled from "styled-components";
 
+const Eachdiv=styled.div`
+display: flex;
+flex-direction:column;
+border: solid 2px #f7f7f7;
+border-radius: 0.5rem;
+margin: 1rem;
+padding: 0.5rem;
+background-color: #7FDBFF;
+color: #795548;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+margin:5rem;
+justify-content: center;
+align-content: center;
+text-align: center;
+color:white;
+font-weight:bold;
+`
 
  class EachOpportunity extends Component {
 
@@ -28,13 +46,13 @@ import { connect } from 'react-redux';
     
         return(
             <div>
-                <div>
+                <Eachdiv>
             <p>{brandname}</p>
             <p>{branddescription}</p>
             <p>{usp}</p>
             <p>{tags}</p>
             <p>{brandurl}</p>
-                </div>
+                </Eachdiv>
 
 
             </div>

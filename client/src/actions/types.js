@@ -5,4 +5,6 @@ export const FETCH_USER = "FETCH_USER";
 export const GET_DATA = "GET_DATA";
 export const AUTH_USER = "auth_user";
 export const UNAUTH_USER = "unauth_user";
+export const DISPLAY_ERROR = 'display_error';
+export const RESET_ERROR = 'reset_error';
 // export const AUTH_ERROR = 'auth_error';
