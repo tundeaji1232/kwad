@@ -121,7 +121,7 @@ class LoginForm extends Component {
 
  
   // componentDidMount() {
-  //   this.props.displayError();
+  //   this.props.displayError("err");
   // }
 
 }
