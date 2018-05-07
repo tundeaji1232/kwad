@@ -4,6 +4,7 @@ Visit website...not fully ready for commercial use
 ### Kwadium is an online learning and earning platform built for individual that want to be online entrepreneurs. <br />
 ### The platform educate, help optimise , empower with opportunities and create a earning system for users.
 
+  [![kwadium.gif](https://s1.gifyu.com/images/kwadium.gif)](https://gifyu.com/image/xEhg)
 ## Tech Stack
 React: front end component <br />
 Styled Component : styling <br />
@@ -23,7 +24,7 @@ PostgreSQL, Node
 
 **Installation**
 ```
-git clone hhttps://github.com/tundeaji1232/kwad.git  && cd kwad && npm i
+git clone https://github.com/tundeaji1232/kwad.git  && cd kwad && npm i
 ```
 
 And then:
