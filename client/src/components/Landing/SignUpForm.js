@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
-import { signupUser } from "../../actions";
+import { signupUser,displayError } from "../../actions";
 import { connect } from 'react-redux';
 import styled from "styled-components";
 
@@ -133,10 +133,10 @@ class SignUpForm extends Component {
         this.props.signupUser(values)
       }
 
-      componentDidMount(){
-          this.props.restError();
-      }
-}
+//       componentDidMount(){
+//           this.props.restError();
+//       }
+ }
 
 const validate = values => {
     const errors = {};
@@ -156,6 +156,6 @@ const validate = values => {
     validate,
     form: 'SignUpForm'
   })(
-     connect (mapStateToProps, { signupUser })(SignUpForm)
+     connect (mapStateToProps, { signupUser,displayError })(SignUpForm)
   )
   
