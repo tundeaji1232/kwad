@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
 const Eachdiv=styled.div`
 display: flex;
@@ -18,6 +19,11 @@ align-content: center;
 text-align: center;
 color:white;
 font-weight:bold;
+`
+
+const H33 = styled.h3`
+margin: 1rem;
+color:  #7FDBFF;
 `
 
  class EachOpportunity extends Component {
@@ -46,6 +52,7 @@ font-weight:bold;
     
         return(
             <div>
+                <Link to="/opportunity" style={{ textDecoration: 'none' }}><H33>Back</H33></Link>
                 <Eachdiv>
             <p>{brandname}</p>
             <p>{branddescription}</p>
