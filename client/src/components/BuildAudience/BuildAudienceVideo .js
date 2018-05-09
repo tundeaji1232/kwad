@@ -2,7 +2,16 @@ import React , { Component } from "react";
 import YouTube from "react-youtube";
 import styled from "styled-components";
 
-
+const ContainerD = styled.div`
+  text-align: center;
+  display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+  
+   flex-flow: row wrap;
+  
+   align-content: flex-end;
+`
 const Videodiv=styled.div`
 display: flex;
 flex-direction:column;
@@ -23,14 +32,14 @@ export default class BuildAudienceVideo extends Component {
     render() {
       const opts = {
         height: '290',
-        width: '640',
+        width: '540',
         playerVars: { // https://developers.google.com/youtube/player_parameters
           autoplay: 1
         }
       };
    
       return (
-       <div>
+       <ContainerD>
         <Videodiv>
          <h2> Building your Online Persona </h2>
         <YouTube
@@ -59,9 +68,17 @@ export default class BuildAudienceVideo extends Component {
         onReady={this._onReady}
       />
           </Videodiv>
-      
+          
+          <Videodiv>
+         <h2> Ignite Visibilty </h2>
+        <YouTube
+          videoId="y5Nt_KRZWtY"
+          opts={opts}
+          onReady={this._onReady}
+        /> 
+        </Videodiv>
 
-       </div>
+       </ContainerD>
        
       );
     }

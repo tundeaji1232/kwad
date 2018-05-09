@@ -12,6 +12,7 @@ const NavBar = styled.nav`
   align-items: center;
   justify-content: space-between;
   background-color: #7FDBFF;
+ 
   
 `;
 const Nul = styled.ul`
@@ -21,7 +22,7 @@ const Nul = styled.ul`
   margin:0;
   padding:0;
   flex-direction: row;
-  list-style-type: none;
+   
   justify-content: space-around;
   font-size:1.3if(process.env.NODE_ENV !== "production"){
     rem;
@@ -30,7 +31,10 @@ const Nul = styled.ul`
 const Nli =styled.li`
 flex: 0 1 auto;
 display:block;
+list-style-type: none;
+text-decoration:none;
 `
+
 
 
 class Header extends Component {
@@ -39,14 +43,15 @@ class Header extends Component {
     
         <NavBar>
           <Nul>
-         <Nli> <Link to='/buildAudience' >Build Your Audience</Link></Nli>
-         <Nli> <Link to='/socialEvaluate' >Evaluate Your Net Worth</Link></Nli>
-          <Nli><Link to='/opportunity' >Opportunities</Link></Nli>
-          <Nli><Link to='/incomeManager' >Income Manager</Link> </Nli>
+         <Nli> <Link to='/buildAudience' style={{ textDecoration: 'none' }}><b>BUILD AUDIENCE</b></Link></Nli>
+         <Nli> <Link to='/socialEvaluate' style={{ textDecoration: 'none' }}><b>EVALUATE</b></Link></Nli>
+          <Nli><Link to='/opportunity' style={{ textDecoration: 'none' }}><b>OPPORTUNITIES</b></Link></Nli>
+          <Nli><Link to='/incomeManager' style={{ textDecoration: 'none' }}><b>INCOME MANAGER</b></Link> </Nli>
           <Nli>
-          <Link to='/' onClick={this.logout.bind(this)}>
-            <i ></i>
-            Log Out
+          <Link to='/' style={{ textDecoration: 'none' }} onClick={this.logout.bind(this)}>
+            <i ></i><b>
+            LOGOUT
+            </b>
           </Link>
         </Nli>
           </Nul>     

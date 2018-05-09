@@ -12,6 +12,7 @@ export default class YoutubeForm extends Component {
             type = "text"
             value={this.props.value}
             onChange={this.props.changes}
+            placeholder="youtube channel Id"
             />
             <input
              type="submit" 
