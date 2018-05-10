@@ -42,7 +42,7 @@ color:  #7FDBFF;
         
 
         const {
-            userId,
+            
             brandname,
             branddescription,
             usp,

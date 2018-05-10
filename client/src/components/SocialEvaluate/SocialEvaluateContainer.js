@@ -82,7 +82,7 @@ align-items:center;
             <p>Example of youtube channel ID: UC98x5I1LVPhtnUHDyujq7zg</p>
             </Borderdiv>
             </DivSocialContainer>
-            { subscriberCount ==undefined ?
+            { subscriberCount === undefined ?
                 <p></p>:
                 <div><h2> To optimise your Youtube channel subscribers </h2>
                 <p><b>Be consistent:</b> The “one-and-done” approach does not work on YouTube. If you want the views and the traffic, you need to be posting and updating your content consistently for best results. Upload new videos and share with your list and sphere of influence as frequently as possible.<br />

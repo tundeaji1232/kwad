@@ -4,16 +4,16 @@ import Header from "../Header";
 import styled from "styled-components";
 
 
-const ContainerD = styled.div`
-  text-align: center;
-  display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
+// const ContainerD = styled.div`
+//   text-align: center;
+//   display: flex;
+//    flex-direction: row;
+//    flex-wrap: wrap;
   
-   flex-flow: row wrap;
+//    flex-flow: row wrap;
   
-   align-content: flex-end;
-`
+//    align-content: flex-end;
+// `
 
 const MainH1= styled.h1`
 text-align: center;
